@@ -1,6 +1,7 @@
 #!/bin/bash -eu
 
 ./download-pkg.sh bee https://github.com/bec-ca/bee/archive/refs/tags/v1.1.0.tar.gz
+./download-pkg.sh bee https://github.com/bec-ca/command/archive/refs/tags/v1.0.0.tar.gz
 
 for file in bif/*.cpp; do
   echo "Compiling $file..."
