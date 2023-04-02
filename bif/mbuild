@@ -1,0 +1,99 @@
+cpp_library:
+  name: array
+  headers: array.hpp
+  libs:
+    /bee/copy
+    /bee/ref
+    bifer
+    data_range
+    debif
+    size_of
+
+cpp_test:
+  name: array_test
+  sources: array_test.cpp
+  libs:
+    /bee/copy
+    /bee/format
+    /bee/testing
+    array
+    bifer
+    debif
+  output: array_test.out
+
+cpp_library:
+  name: bif
+  headers: bif.hpp
+
+cpp_binary:
+  name: bif_convert
+  libs: bif_convert_main
+
+cpp_library:
+  name: bif_convert_main
+  sources: bif_convert_main.cpp
+  libs:
+    /bee/file_reader
+    /bee/file_writer
+    /command/command_builder
+    /command/group_builder
+    array
+    debif
+    string
+
+cpp_library:
+  name: bifer
+  sources: bifer.cpp
+  headers: bifer.hpp
+  libs: size_of
+
+cpp_test:
+  name: bifer_test
+  sources: bifer_test.cpp
+  libs:
+    /bee/format
+    /bee/testing
+    bifer
+    data_range
+  output: bifer_test.out
+
+cpp_library:
+  name: data_range
+  sources: data_range.cpp
+  headers: data_range.hpp
+  libs: bifer
+
+cpp_library:
+  name: debif
+  headers: debif.hpp
+  libs:
+    bifer
+    data_range
+    scalar_wrapper
+    size_of
+
+cpp_library:
+  name: scalar_wrapper
+  headers: scalar_wrapper.hpp
+  libs:
+    /bee/format
+    data_range
+
+cpp_library:
+  name: size_of
+  headers: size_of.hpp
+
+cpp_library:
+  name: string
+  sources: string.cpp
+  headers: string.hpp
+  libs: array
+
+cpp_test:
+  name: string_test
+  sources: string_test.cpp
+  libs:
+    /bee/testing
+    string
+  output: string_test.out
+
